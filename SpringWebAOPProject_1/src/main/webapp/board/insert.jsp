@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <style type="text/css">
@@ -17,48 +17,47 @@
 </style>
 </head>
 <body>
- <div class="container">
- 	<div class="col-sm-9">
- 	 <h3 class="text-center">±€æ≤±‚</h3>
- 	  <form method="post" action="insert_ok.do">
- 	  <table class="table">
- 	   <tr>
- 	    <th width=15% class="text-right">¿Ã∏ß</th>
- 	    <th width=85%>
- 	     <input type="text" name=name size=15 class="input-sm">
- 	    </th>
- 	    </tr>
- 	     <tr>
- 	    <th width=15% class="text-right">¡¶∏Ò</th>
- 	    <th width=85%>
- 	     <input type="text" name=subject size=15 class="input-sm">
- 	    </th>
- 	    </tr>
- 	     <tr>
- 	    <th width=15% class="text-right">≥ªøÎ</th>
- 	    <th width=85%>
- 	       <textarea rows="5" cols="52" name=content></textarea>
- 	    </th>
- 	    </tr>
- 	     <tr>
- 	    <th width=15% class="text-right">∫Òπ–π¯»£</th>
- 	    <th width=85%>
- 	     <input type="password" name=pwd size=10 class="input-sm">
- 	    </th>
- 	    </tr>
- 	    <tr>
- 	     <td colspan="2" class="text-center">
- 	      <input type="submit" value="±€æ≤±‚" class="btn-sm btn-info">
- 	      <input type="button" value="√Îº“" class="btn-sm btn-info"
- 	      onclick="javascript:history.back()">
- 	     </td>
- 	     </tr>
- 	  </table>
- 	  </form>
- 	</div>
- 	<div class="col-sm-3">
- 	 
- 	</div>
- </div>
+  <div class="container">
+   <div class="row">
+     <h3 class="text-center">Í∏ÄÏì∞Í∏∞</h3>
+     <form method="post" action="insert_ok.do">
+     <table class="table">
+       <tr>
+        <th width=15% class="text-right">Ïù¥Î¶Ñ</th>
+        <td width=85%>
+          <input type=text name=name size=15 class="input-sm">
+        </td>
+       </tr>
+       <tr>
+        <th width=15% class="text-right">Ï†úÎ™©</th>
+        <td width=85%>
+          <input type=text name=subject size=50 class="input-sm">
+        </td>
+       </tr>
+       <tr>
+        <th width=15% class="text-right">ÎÇ¥Ïö©</th>
+        <td width=85%>
+          <textarea rows="5" cols="52" name=content></textarea>
+        </td>
+       </tr>
+       <tr>
+        <th width=15% class="text-right">ÎπÑÎ∞ÄÎ≤àÌò∏</th>
+        <td width=85%>
+          <input type=password name=pwd size=10 class="input-sm">
+        </td>
+       </tr>
+       <tr>
+         <td colspan="2" class="text-center">
+          <input type="submit" value="Í∏ÄÏì∞Í∏∞" class="btn-sm btn-success">
+          <input type="button" value="Ï∑®ÏÜå" class="btn-sm btn-warning"
+           onclick="javascript:history.back()">
+         </td>
+       </tr>
+     </table>
+     </form>
+   </div>
+    <div style="height: 20px"></div>
+    <jsp:include page="top.jsp"></jsp:include>
+  </div>
 </body>
 </html>

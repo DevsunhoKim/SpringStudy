@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <style type="text/css">
@@ -17,35 +17,42 @@
 </style>
 </head>
 <body>
- <div class="container">
-  <div class="col-sm-9">
-    <h3 class="text-center">≥ªøÎ ∫∏±‚</h3>
-    <table class="table">
-      <tr>
-        <th class="text-center success" width=20%>π¯»£</th>
-        <td class="text-center" width=50%></td>  
-        <th class="text-center success" width=20%>¿€º∫¿œ</th>
-        <td class="text-center" width=50%></td>  
-      </tr>
-      <tr>
-        <th class="text-center success" width=20%>¿Ã∏ß</th>
-        <td class="text-center" width=50%></td>  
-        <th class="text-center success" width=20%>¡∂»∏ºˆ</th>
-        <td class="text-center" width=50%></td>  
-      </tr>
-      <tr>
-        <th class="text-center success" width=20%>¡¶∏Ò</th>
-        <td class="t" width=50%>  
-        <th class="text-center success" width=20%></th>
-        <td class="text-center" width=50%>
-      
-      </tr>  
-     
-    </table>
+  <div class="container">
+    <div class="row">
+      <h3 class="text-center">ÎÇ¥Ïö©Î≥¥Í∏∞</h3>
+      <table class="table">
+       <tr>
+         <th class="text-center success" width=20%>Î≤àÌò∏</th>
+         <td class="text-center" width=30%>${vo.no }</td>
+         <th class="text-center success" width=20%>ÏûëÏÑ±Ïùº</th>
+         <td class="text-center" width=30%>${vo.dbday }</td>
+       </tr>
+       <tr>
+         <th class="text-center success" width=20%>Ïù¥Î¶Ñ</th>
+         <td class="text-center" width=30%>${vo.name }</td>
+         <th class="text-center success" width=20%>Ï°∞ÌöåÏàò</th>
+         <td class="text-center" width=30%>${vo.hit }</td>
+       </tr>
+       <tr>
+         <th class="text-center success" width=20%>Ï†úÎ™©</th>
+         <td colspan="3">${vo.subject }</td>
+       </tr>
+       <tr>
+        <td colspan="4" class="text-left" valign="top"
+         height="200"><pre style="white-space: pre-wrap;border:none;background-color: white;">${vo.content }</pre></td>
+       </tr>
+       <tr>
+         <td colspan="4" class="text-right">
+          <a href="reply.do?pno=${vo.no }" class="btn btn-xs btn-danger">ÎãµÎ≥Ä</a>
+          <a href="update.do?no=${vo.no }" class="btn btn-xs btn-success">ÏàòÏ†ï</a>
+          <a href="#" class="btn btn-xs btn-info">ÏÇ≠Ï†ú</a>
+          <a href="list.do" class="btn btn-xs btn-warning">Î™©Î°ù</a>
+         </td>
+       </tr>
+      </table>
+    </div>
+    <div style="height: 20px"></div>
+    <jsp:include page="top.jsp"></jsp:include>
   </div>
-  <div class="col-sm-3">
-   
-  </div>
- </div>
 </body>
 </html>

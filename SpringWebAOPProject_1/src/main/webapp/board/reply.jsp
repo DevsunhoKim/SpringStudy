@@ -19,26 +19,26 @@
 <body>
   <div class="container">
    <div class="row">
-     <h3 class="text-center">수정하기</h3>
-     <form method="post" action="update_ok.do">
+     <h3 class="text-center">답변하기</h3>
+     <form method="post" action="reply_ok.do">
      <table class="table">
        <tr>
         <th width=15% class="text-right">이름</th>
         <td width=85%>
-          <input type=text name=name size=15 class="input-sm" value="${vo.name }">
-          <input type="hidden" name=no value="${vo.no }">
+          <input type=text name=name size=15 class="input-sm">
+          <input type="hidden" name=pno value="${pno }">
         </td>
        </tr>
        <tr>
         <th width=15% class="text-right">제목</th>
         <td width=85%>
-          <input type=text name=subject size=50 class="input-sm" value="${vo.subject }">
+          <input type=text name=subject size=50 class="input-sm">
         </td>
        </tr>
        <tr>
         <th width=15% class="text-right">내용</th>
         <td width=85%>
-          <textarea rows="5" cols="52" name=content>${vo.content }</textarea>
+          <textarea rows="5" cols="52" name=content></textarea>
         </td>
        </tr>
        <tr>
@@ -49,7 +49,7 @@
        </tr>
        <tr>
          <td colspan="2" class="text-center">
-          <input type="submit" value="수정" class="btn-sm btn-success">
+          <input type="submit" value="답변" class="btn-sm btn-success">
           <input type="button" value="취소" class="btn-sm btn-warning"
            onclick="javascript:history.back()">
          </td>
@@ -57,7 +57,7 @@
      </table>
      </form>
    </div>
-   <div style="height: 20px"></div>
+    <div style="height: 20px"></div>
     <jsp:include page="top.jsp"></jsp:include>
   </div>
 </body>

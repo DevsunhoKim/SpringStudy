@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <style type="text/css">
@@ -18,56 +18,66 @@
 </style>
 </head>
 <body>
- <div class="container">
-  <div class="col-sm-9">
-    <h3 class="text-center">´äº¯Çü °Ô½ÃÆÇ</h3>
-     <table class="table">
-      <tr>
-       <td>
-        <a href="insert.do" class="btn btn-sm btn-info">»õ±Û</a>
+  <div class="container">
+    <div class="row">
+      <h3 class="text-center">ë‹µë³€í˜• ê²Œì‹œíŒ</h3>
+      <table class="table">
+       <tr>
+        <td>
+          <a href="insert.do" class="btn btn-sm btn-primary">ìƒˆê¸€</a>
         </td>
+       </tr>
+      </table>
+      <table class="table">
+        <tr class="danger">
+         <th width=10% class="text-center">ë²ˆí˜¸</th>
+         <th width=55% class="text-center">ì œëª©</th>
+         <th width=10% class="text-center">ì´ë¦„</th>
+         <th width=15% class="text-center">ì‘ì„±ì¼</th>
+         <th width=10% class="text-center">ì¡°íšŒìˆ˜</th>
         </tr>
-     </table>
-     <table class="table">
-      <tr class="danger">
-      <th width=10% class="text-center">¹øÈ£</th>
-      <th width=55% class="text-center">Á¦¸ñ</th>
-      <th width=10% class="text-center">ÀÌ¸§</th>
-      <th width=15% class="text-center">ÀÛ¼ºÀÏ</th>
-      <th width=10% class="text-center">Á¶È¸¼ö</th>
-      </tr>
-      <c:forEach var="vo" items="${list }">
-      <tr>
-	      <td width=10% class="text-center">${vo.no }</td>
-	      <td width=55% class="text-center">${vo.subject }</td>
-	      <td width=10% class="text-center">${vo.name }</td>
-	      <td width=15% class="text-center">${vo.dbday }</td>
-	      <td width=10% class="text-center">${vo.hit }</td>
-      </tr>      
-      </c:forEach>
-     </table>
-     <table class="table">
-      <tr>
-       <td>
-         <input type="checkbox" value="N" name="fd">ÀÌ¸§
-         <input type="checkbox" value="S" name="fd">Á¦¸ñ
-         <input type="checkbox" value="C" name="fd">³»¿ë
-         <input type="text" class="input-sm" name="ss">
-         <input type="submit" value="°Ë»ö" class="btn-sm btn-info">
+        <c:set var="count" value="${count }"/>
+        <c:forEach var="vo" items="${list }">
+          <tr>
+	         <td width=10% class="text-center">${count }</td>
+	         <td width=55%>
+	           <c:if test="${vo.group_tab>0}">
+	            <c:forEach var="i" begin="1" end="${vo.group_tab }">
+	              &nbsp;&nbsp;
+	            </c:forEach>
+	            <img src="re_icon.png">
+	           </c:if>
+	           <a href="detail.do?no=${vo.no }">
+	            ${vo.subject }
+	           </a>
+	         </td>
+	         <td width=10% class="text-center">${vo.name }</td>
+	         <td width=15% class="text-center">${vo.dbday }</td>
+	         <td width=10% class="text-center">${vo.hit }</td>
+	        </tr>
+	        <c:set var="count" value="${count-1 }"/>
+        </c:forEach>
+      </table>
+      <table class="table">
+       <tr>
+        <td>
+          <input type="checkbox" value="N" name="fd">ì´ë¦„
+          <input type="checkbox" value="S" name="fd">ì œëª©
+          <input type="checkbox" value="C" name="fd">ë‚´ìš©
+          <input type=text class="input-sm" name="ss">
+          <input type=submit value="ê²€ìƒ‰"
+             class="btn-sm btn-info">
         </td>
-       <td class="text-right">
-        <a href="#" class="btn btn-sm btn-success">ÀÌÀü</a>
-        ${curpage } page / ${totalpage } pages
-        <a href="#" class="btn btn-sm btn-success">´ÙÀ½</a>
-       </td>
-      </tr>
-     
-     </table>
+        <td class="text-right">
+         <a href="list.do?page=${curpage>1?curpage-1:curpage }" class="btn btn-sm btn-success">ì´ì „</a>
+         ${curpage } page / ${totalpage } pages
+         <a href="list.do?page=${curpage<totalpage?curpage+1:curpage }" class="btn btn-sm btn-success">ë‹¤ìŒ</a>
+        </td>
+       </tr>
+      </table>
+    </div>
+    <div style="height: 20px"></div>
+    <jsp:include page="top.jsp"></jsp:include>
   </div>
-  <div class="col-sm-3">
-  
-  </div>
- </div>
-
 </body>
 </html>
