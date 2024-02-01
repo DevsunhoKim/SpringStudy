@@ -44,7 +44,7 @@
         </ul>
       </div>
     </div>
-  </div>
+  </div> 
   <script>
    let app = Vue.createApp({
       data() {
