@@ -58,7 +58,9 @@
       <li><a href="#">실시간 채팅</a></li>
       <li><a href="#">마이페이지</a></li>
       <!-- <li><a href="#">관리자페이지</a></li> -->
+      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
     </ul>
+      
     </nav>
 </div>
 </body>

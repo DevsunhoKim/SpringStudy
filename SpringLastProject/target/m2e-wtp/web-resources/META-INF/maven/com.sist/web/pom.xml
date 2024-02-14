@@ -77,8 +77,14 @@
 		    <artifactId>log4jdbc-remix</artifactId>
 		    <version>0.2.7</version>
 		</dependency>
-		
-		
+		<!-- kokoma -->
+		<dependency>
+		  <groupId>org.snu</groupId>
+		  <artifactId>kokoma</artifactId>
+		  <version>1.0</version>
+		  <scope>system</scope>
+		  <systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/org.snu.ids.ha.jar</systemPath>
+		</dependency>
 		<!-- lombok  -->
 		<dependency>
 		    <groupId>org.projectlombok</groupId>
