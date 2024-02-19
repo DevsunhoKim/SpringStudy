@@ -22,4 +22,5 @@ public class FoodController {
 	   model.addAttribute("fno", fno);
 	   return "food/food_list_detail";   
    }
+   
 }

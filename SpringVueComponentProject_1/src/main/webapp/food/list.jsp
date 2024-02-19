@@ -121,7 +121,6 @@ a.link:hover{
 	   components:{
 		  
 	   }
-	   // computed , watch , filter => router(React)
    })
    foodApp.mount('#foodListApp')
   </script>
